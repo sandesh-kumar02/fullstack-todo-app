@@ -1,0 +1,9 @@
+import passport from "passport";
+import User from "../models/user.models.js";
+
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
+export default passport

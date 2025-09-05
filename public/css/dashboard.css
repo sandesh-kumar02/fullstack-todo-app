@@ -1,0 +1,122 @@
+/* Body styling */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Task list */
+ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 600px;
+}
+
+li {
+  background: white;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Task title & description */
+.task-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.task-desc {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Status colors */
+.pending {
+  color: #ff9800;
+  font-weight: bold;
+}
+
+.completed {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+/* Edit & Delete buttons */
+a,
+button {
+  margin-left: 10px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a {
+  background: #2196f3;
+  color: white;
+}
+
+a:hover {
+  background: #1976d2;
+}
+
+button {
+  background: #f44336;
+  color: white;
+}
+
+button:hover {
+  background: #d32f2f;
+}
+
+/* Create Task link */
+.create-task {
+  margin-top: 30px;
+  padding: 12px 20px;
+  background: #6c63ff;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.create-task:hover {
+  background: #9d7fff;
+}
+
+/* Responsive */
+@media (max-width: 650px) {
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  a,
+  button {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+}

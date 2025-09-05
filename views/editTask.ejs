@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Task</title>
+    <link rel="stylesheet" href="/css/edit.css">
+  </head>
+  <body>
+    <div class="edit-header">
+  <h1>Edit Your Task</h1>
+  <p>Update the title, status, or description of your task below.</p>
+</div>
+    <form action="/tasks/<%= task._id %>?_method=PUT" method="POST">
+      <input type="text" name="title" value="<%= task.title %>" placeholder="Task title" required>
+
+      <select name="status">
+        <option value="pending" <%= task.status === 'pending' ? 'selected' : '' %>>Pending</option>
+        <option value="completed" <%= task.status === 'completed' ? 'selected' : '' %>>Completed</option>
+      </select>
+
+      <textarea name="description" placeholder="Task description"><%= task.description %></textarea>
+
+      <button type="submit">Update Task</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Task</title>
+    <link rel="stylesheet" href="css/createTask.css">
+  </head>
+  <body>
+      <div class="task-header">
+    <h1>Create a New Task</h1>
+    <p>Fill in the details below and add a new task to your dashboard.</p>
+  </div>
+    <form action="/task" method="POST">
+      <input type="text" name="title" required placeholder="Task title" />
+
+      <select name="status">
+        <option value="pending" selected>Pending</option>
+        <option value="completed">Completed</option>
+      </select>
+
+      <textarea name="description" placeholder="Task description"></textarea>
+
+      <button type="submit">Add Task</button>
+    </form>
+  </body>
+</html>

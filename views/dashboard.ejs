@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+  </head>
+  <body>
+    <ul>
+      <% if (tasks && tasks.length) { %>
+        <% tasks.forEach(task => { %>
+          <li>
+            <div class="task-info">
+              <span class="task-title"><%= task.title %></span>
+              <span class="task-desc"><%= task.description %></span>
+              <span class="<%= task.status === 'pending' ? 'pending' : 'completed' %>">
+                <%= task.status %>
+              </span>
+            </div>
+
+            <div class="task-actions">
+              <a href="/task/<%= task._id %>/edit">Edit</a>
+              <form action="/tasks/<%= task._id %>/delete?_method=DELETE" method="POST" style="display:inline;">
+                <button type="submit">Delete</button>
+              </form>
+            </div>
+          </li>
+        <% }) %>
+      <% } else { %>
+        <li>No tasks found</li>
+      <% } %>
+    </ul>
+
+    <a href="/task" class="create-task">Create Task</a>
+  </body>
+</html>
