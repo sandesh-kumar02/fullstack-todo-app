@@ -29,5 +29,5 @@ It allows users to **register, log in, and manage their tasks** (Create, Read, U
 
 1. Clone the repo
    ```bash
-   git clone https://github.com/<your-username>/todo-app.git
+   git clone https://github.com/sandesh-kumar02/fullstack-todo-app/tree/main
    cd todo-app
